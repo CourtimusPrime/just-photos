@@ -21,8 +21,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@web/types': path.resolve(__dirname, './packages/types'),
-      '@web/ui': path.resolve(__dirname, './packages/ui')
+      '@': path.resolve(__dirname, './src')
     }
   }
 })

@@ -14,7 +14,7 @@
  */
 import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import type { Photo } from '@web/types'
+import type { Photo } from '@/types/photo'
 
 function Feed() {
   const [photos, setPhotos] = useState<Photo[]>([])

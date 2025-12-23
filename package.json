@@ -2,8 +2,7 @@
   "name": "just-photos",
   "private": true,
   "workspaces": [
-    "web/*",
-    "web/frontend/packages/*"
+    "web/*"
   ],
   "packageManager": "bun@1.1.0",
   "scripts": {
@@ -13,10 +12,7 @@
   },
   "dependencies": {
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "@web/types": "*",
-    "@web/ui": "*",
-    "@web/utils": "*"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "turbo": "^2.0.0",
