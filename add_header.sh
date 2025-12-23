@@ -1,4 +1,6 @@
-/*
+#!/bin/bash
+
+header="/*
  * JustPhotos
  * Copyright (C) 2025 JustPhotos contributors
  *
@@ -11,18 +13,16 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * See the LICENSE file for more details.
- */
-import * as React from 'react';
+ */"
 
-export interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-}
-
-export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return (
-    <button onClick={onClick} style={{ padding: '10px 20px', border: '1px solid #ccc', borderRadius: '4px' }}>
-      {children}
-    </button>
-  );
-};
+find web -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" \) -not -path "*/node_modules/*" -not -path "*/.next/*" -not -path "*/dist/*" | while read file; do
+    if ! head -n 10 "$file" | grep -q "JustPhotos"; then
+        temp=$(mktemp)
+        echo "$header" > "$temp"
+        cat "$file" >> "$temp"
+        mv "$temp" "$file"
+        echo "Added header to $file"
+    else
+        echo "Header already present in $file"
+    fi
+done

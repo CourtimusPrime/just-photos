@@ -99,4 +99,5 @@ temp/
 *.sw?
 
 # Doppler (uncomment if not committing)
-# .doppler.yaml
+.doppler.yaml
+doppler.env

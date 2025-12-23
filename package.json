@@ -11,7 +11,18 @@
     "build": "turbo build",
     "lint": "turbo lint"
   },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@web/types": "*",
+    "@web/ui": "*",
+    "@web/utils": "*"
+  },
   "devDependencies": {
-    "turbo": "^2.0.0"
+    "turbo": "^2.0.0",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "eslint": "^9.39.1"
   }
 }
